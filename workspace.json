@@ -1,4 +1,7 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "homepage": "apps/homepage",
+    "homepage-e2e": "apps/homepage-e2e"
+  }
 }
