@@ -1,3 +1,19 @@
 {
-  "singleQuote": true
+  "singleQuote": true,
+  "arrowParens": "avoid",
+  "printWidth": 120,
+  "trailingComma": "none",
+  "endOfLine": "auto",
+  "htmlWhitespaceSensitivity": "ignore",
+  "importOrder": ["^@angular/(.*)$", "^@azure/(.*)$", "^@ngrx/(.*)$", "^rxjs(.*)$", "^.(.*)$"],
+  "importOrderSeparation": true,
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "options": {
+        "endOfLine": "auto",
+        "parser": "babel-ts"
+      }
+    }
+  ]
 }

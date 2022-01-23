@@ -1,35 +1,105 @@
 {
   "root": true,
-  "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx"],
+  "plugins": [
+    "@nrwl/nx",
+    "@angular-eslint/eslint-plugin",
+    "@angular-eslint/template",
+    "prettier",
+    "unused-imports"
+  ],
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "files": [
+        "*.ts",
+        "*.tsx",
+        "*.js",
+        "*.jsx"
+      ],
       "rules": {
-        "@nrwl/nx/enforce-module-boundaries": [
+        "prettier/prettier": [
           "error",
+          {
+            "endOfLine": "auto",
+            "parser": "babel-ts"
+          }
+        ],
+        "@typescript-eslint/member-ordering": "warn",
+        "@nrwl/nx/enforce-module-boundaries": [
+          "warn",
           {
             "enforceBuildableLibDependency": true,
             "allow": [],
             "depConstraints": [
               {
                 "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "onlyDependOnLibsWithTags": [
+                  "*"
+                ]
+              },
+              {
+                "sourceTag": "client",
+                "onlyDependOnLibsWithTags": [
+                  "feature",
+                  "environment"
+                ]
               }
             ]
           }
+        ],
+        "curly": "error",
+        "comma-dangle": "error",
+        "comma-spacing": "error",
+        "no-console": [
+          "error",
+          {
+            "allow": [
+              "warn",
+              "error"
+            ]
+          }
+        ],
+        "no-empty": "error",
+        "no-unreachable": "error",
+        "no-else-return": "error",
+        "no-var": "error",
+        "unused-imports/no-unused-imports": "error",
+        "newline-after-var": "error",
+        "object-shorthand": "error",
+        "semi": "error"
+      },
+      "extends": [
+        "plugin:prettier/recommended",
+        "plugin:@nrwl/nx/typescript",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:@nrwl/nx/javascript"
+      ]
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ]
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "excludedFiles": [
+        "*inline-template-*.component.html"
+      ],
+      "extends": [
+        "plugin:prettier/recommended"
+      ],
+      "rules": {
+        "prettier/prettier": [
+          "error",
+          {
+            "parser": "html"
+          }
         ]
       }
-    },
-    {
-      "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nrwl/nx/typescript"],
-      "rules": {}
-    },
-    {
-      "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nrwl/nx/javascript"],
-      "rules": {}
     }
   ]
 }
