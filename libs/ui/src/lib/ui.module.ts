@@ -5,10 +5,13 @@ import { DefaultLayoutComponent } from './default-layout/default-layout.componen
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenubarModule } from 'primeng/menubar';
+import { DropdownModule } from 'primeng/dropdown';
+import { FormsModule } from '@angular/forms';
+import { LanguageSelectionComponent } from './language-selection/language-selection.component';
 
 @NgModule({
-  imports: [CommonModule, MenubarModule],
-  declarations: [DefaultLayoutComponent, HeaderComponent, FooterComponent],
+  imports: [CommonModule, MenubarModule, DropdownModule, FormsModule],
+  declarations: [DefaultLayoutComponent, HeaderComponent, FooterComponent, LanguageSelectionComponent],
   exports: [DefaultLayoutComponent]
 })
 export class UiModule {

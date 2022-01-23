@@ -1,0 +1,8 @@
+<p-dropdown
+  *ngIf="languages$ | async as languages"
+  [options]="languages"
+  [(ngModel)]="selectedLanguage"
+  (onChange)="changeLanguage($event.value)"
+  optionLabel="name"
+  optionValue="code"
+></p-dropdown>

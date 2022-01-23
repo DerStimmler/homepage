@@ -1,1 +1,5 @@
-<p-menubar [model]="items"></p-menubar>
+<p-menubar *ngIf="items$ | async as items" [model]="items">
+  <ng-template pTemplate="end">
+    <homepage-language-selection></homepage-language-selection>
+  </ng-template>
+</p-menubar>

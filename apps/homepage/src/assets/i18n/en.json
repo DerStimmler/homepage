@@ -1,0 +1,10 @@
+﻿{
+  "languages": {
+    "german": "Deutsch",
+    "english": "English"
+  },
+  "menu": {
+    "home": "Home",
+    "projects": "Projects"
+  }
+}
