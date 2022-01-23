@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "homepage": "apps/homepage",
-    "homepage-e2e": "apps/homepage-e2e"
+    "homepage-e2e": "apps/homepage-e2e",
+    "ui": "libs/ui"
   }
 }
