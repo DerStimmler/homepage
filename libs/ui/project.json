@@ -17,6 +17,13 @@
       "options": {
         "lintFilePatterns": ["libs/ui/src/**/*.ts", "libs/ui/src/**/*.html"]
       }
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "options": {
+        "configFile": "libs/ui/.stylelintrc.json",
+        "lintFilePatterns": ["libs/ui/**/*.scss"]
+      }
     }
   },
   "tags": []
