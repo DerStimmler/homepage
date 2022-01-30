@@ -125,6 +125,15 @@
         ]
       }
     },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "options": {
+        "configFile": "apps/homepage/.stylelintrc.json",
+        "lintFilePatterns": [
+          "apps/homepage/**/*.scss"
+        ]
+      }
+    },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": [
