@@ -1,0 +1,12 @@
+﻿{
+  "*.(yml|json)": [
+    "prettier --write"
+  ],
+  "*.(js|ts|html)": [
+    "eslint --cache --fix"
+  ],
+  "*.(css|scss)": [
+   "prettier --write",
+   "stylelint --fix"
+  ]
+}
