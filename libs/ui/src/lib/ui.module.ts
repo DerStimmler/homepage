@@ -17,6 +17,7 @@ import { DarkModeSelectionComponent } from './dark-mode-selection/dark-mode-sele
 import { ColorSelectionComponent } from './color-selection/color-selection.component';
 import { DividerModule } from 'primeng/divider';
 import { ListboxModule } from 'primeng/listbox';
+import { ThreeDimensionalTextComponent } from './three-dimensional-text/three-dimensional-text.component';
 
 @NgModule({
   imports: [
@@ -37,9 +38,10 @@ import { ListboxModule } from 'primeng/listbox';
     LanguageSelectionComponent,
     ThemeSelectionComponent,
     DarkModeSelectionComponent,
-    ColorSelectionComponent
+    ColorSelectionComponent,
+    ThreeDimensionalTextComponent
   ],
-  exports: [DefaultLayoutComponent]
+  exports: [DefaultLayoutComponent, ThreeDimensionalTextComponent]
 })
 export class UiModule {
   constructor(private primengConfig: PrimeNGConfig, private themeService: ThemeService) {

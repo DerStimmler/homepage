@@ -1,14 +1,17 @@
-:host{
+:host {
   display: flex;
   flex: 1;
   flex-direction: column;
   height: 100%;
 }
 
-main{
+main {
+  display: flex;
   flex: 1;
+  flex-direction: column;
 }
 
-main, footer {
+main,
+footer {
   margin: 0 1em;
 }
