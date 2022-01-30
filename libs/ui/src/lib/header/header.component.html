@@ -1,5 +1,8 @@
 <p-menubar *ngIf="items$ | async as items" [model]="items">
   <ng-template pTemplate="end">
-    <homepage-language-selection></homepage-language-selection>
+    <div class="options">
+      <homepage-language-selection></homepage-language-selection>
+      <homepage-theme-selection></homepage-theme-selection>
+    </div>
   </ng-template>
 </p-menubar>

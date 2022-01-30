@@ -1,0 +1,15 @@
+<button pButton class="p-button-outlined" icon="mdi mdi-brush" (click)="op.show($event)"></button>
+<p-overlayPanel [dismissable]="true" #op>
+  <ng-template pTemplate>
+    <homepage-dark-mode-selection
+      [darkModeSelected]="darkModeSelected"
+      (darkModeSelectedChange)="changeDarkMode($event)"
+    ></homepage-dark-mode-selection>
+    <p-divider></p-divider>
+    <homepage-color-selection
+      [colors]="colors"
+      [selectedColor]="selectedColor"
+      (selectedColorChange)="changeColor($event)"
+    ></homepage-color-selection>
+  </ng-template>
+</p-overlayPanel>

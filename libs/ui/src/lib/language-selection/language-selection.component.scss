@@ -1,0 +1,12 @@
+:host{
+  ::ng-deep{
+    .p-dropdown-trigger{
+      display: none;
+    }
+
+    .p-dropdown{
+      border-color: var(--primary-color);
+      background: transparent;
+    }
+ }
+}

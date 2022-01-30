@@ -5,4 +5,9 @@
   (onChange)="changeLanguage($event.value)"
   optionLabel="name"
   optionValue="code"
-></p-dropdown>
+>
+  <ng-template pTemplate="selectedItem">
+    <i class="mdi mdi-translate"></i>
+    {{selectedLanguage | uppercase}}
+  </ng-template>
+</p-dropdown>

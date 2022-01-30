@@ -1,0 +1,12 @@
+div {
+  width: 100%;
+  height: 1em;
+
+  &.random-button{
+    color: black;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right, #9C27B0, #FFC107, #4CAF50, #2196F3);
+  }
+}

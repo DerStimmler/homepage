@@ -1,0 +1,6 @@
+<p-listbox [options]="colors" [ngModel]="selectedColor" (ngModelChange)="selectColor($event)" optionLabel="name">
+  <ng-template let-color pTemplate="item">
+    <div *ngIf="color.name !== Color.Random" [style.background-color]="color.hex"></div>
+    <div *ngIf="color.name === Color.Random" class="random-button"><i class="mdi mdi-autorenew"></i></div>
+  </ng-template>
+</p-listbox>

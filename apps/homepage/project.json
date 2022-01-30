@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/homepage",
         "index": "apps/homepage/src/index.html",
@@ -14,8 +16,53 @@
         "polyfills": "apps/homepage/src/polyfills.ts",
         "tsConfig": "apps/homepage/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/homepage/src/favicon.ico", "apps/homepage/src/assets"],
-        "styles": ["apps/homepage/src/styles.scss"],
+        "assets": [
+          "apps/homepage/src/favicon.ico",
+          "apps/homepage/src/assets"
+        ],
+        "styles": [
+          "apps/homepage/src/styles.scss",
+          {
+            "input": "node_modules/primeng/resources/themes/saga-purple/theme.css",
+            "bundleName": "saga-purple",
+            "inject": false
+          },
+          {
+            "input": "node_modules/primeng/resources/themes/arya-purple/theme.css",
+            "bundleName": "arya-purple",
+            "inject": false
+          },
+          {
+            "input": "node_modules/primeng/resources/themes/saga-orange/theme.css",
+            "bundleName": "saga-orange",
+            "inject": false
+          },
+          {
+            "input": "node_modules/primeng/resources/themes/arya-orange/theme.css",
+            "bundleName": "arya-orange",
+            "inject": false
+          },
+          {
+            "input": "node_modules/primeng/resources/themes/saga-green/theme.css",
+            "bundleName": "saga-green",
+            "inject": false
+          },
+          {
+            "input": "node_modules/primeng/resources/themes/arya-green/theme.css",
+            "bundleName": "arya-green",
+            "inject": false
+          },
+          {
+            "input": "node_modules/primeng/resources/themes/saga-blue/theme.css",
+            "bundleName": "saga-blue",
+            "inject": false
+          },
+          {
+            "input": "node_modules/primeng/resources/themes/arya-blue/theme.css",
+            "bundleName": "arya-blue",
+            "inject": false
+          }
+        ],
         "scripts": []
       },
       "configurations": {
@@ -72,12 +119,17 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["apps/homepage/src/**/*.ts", "apps/homepage/src/**/*.html"]
+        "lintFilePatterns": [
+          "apps/homepage/src/**/*.ts",
+          "apps/homepage/src/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/homepage"],
+      "outputs": [
+        "coverage/apps/homepage"
+      ],
       "options": {
         "jestConfig": "apps/homepage/jest.config.js",
         "passWithNoTests": true
