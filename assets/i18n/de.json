@@ -1,0 +1,11 @@
+﻿{
+  "languages": {
+    "german": "Deutsch",
+    "english": "English"
+  },
+  "menu": {
+    "home": "Startseite",
+    "projects": "Projekte"
+  },
+  "coming_soon": "In Kürze"
+}
