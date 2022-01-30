@@ -84,15 +84,10 @@ export class ThemeService {
       themeColor = ThemeService.getRandomThemeColor();
     }
 
-    console.log('DarkMode', darkMode);
-    console.log('Color', themeColor.name);
-
     const theme = themes.find(t => t.color === themeColor.name && t.darkMode === darkMode);
 
     if (theme) {
       const themeLink = this.document.getElementById('app-theme') as HTMLLinkElement;
-
-      console.log('ThemeLink', themeLink.id);
 
       if (themeLink) {
         themeLink.href = theme.name + '.css';
