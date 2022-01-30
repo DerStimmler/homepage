@@ -1,11 +1,12 @@
-﻿html, body {
-  min-height: 100vh;
+html,
+body {
+  font-family: Roboto, sans-serif;
   height: auto;
-  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
 }
 
-body{
-  display:flex;
-  flex-direction: column;
+body {
   background-color: var(--surface-50);
+  display: flex;
+  flex-direction: column;
 }

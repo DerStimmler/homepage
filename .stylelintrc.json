@@ -20,7 +20,6 @@
     "font-family-name-quotes": "always-where-recommended",
     "font-weight-notation": "named-where-possible",
     "function-name-case": "lower",
-    "function-calc-no-invalid": true,
     "function-calc-no-unspaced-operator": true,
     "function-url-quotes": "always",
     "length-zero-no-unit": true,
