@@ -55,8 +55,6 @@ export class TranslocoHttpLoader implements TranslocoLoader {
 })
 export class TranslationModule {
   constructor(private translocoService: TranslocoService, @Inject(DOCUMENT) private document: Document) {
-    //registerLocaleData(localeDe);
-
     const availableLanguages = translocoService.getAvailableLangs() as string[];
     const defaultLanguage = translocoService.getDefaultLang();
     const browserLanguage = getBrowserLang() as string;
