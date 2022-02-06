@@ -1,3 +1,14 @@
+:host::ng-deep {
+  .p-menubar {
+    border: none;
+    box-shadow: 0 8px 16px -16px rgba(0, 0, 0, 0.19), 0 3px 3px -1px rgba(0, 0, 0, 0.23);
+
+    .p-menuitem-link-active .p-menuitem-text.p-menuitem-text {
+      color: var(--primary-color);
+    }
+  }
+}
+
 .options {
   display: flex;
   gap: 2em;
