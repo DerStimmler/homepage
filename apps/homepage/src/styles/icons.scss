@@ -1,0 +1,15 @@
+.pi:before {
+  display: inline-block;
+  font: normal normal normal 24px/1 'Material Design Icons';
+  font-size: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: inherit;
+  text-rendering: auto;
+}
+
+/* Get overrides from https://pictogrammers.github.io/@mdi/font/6.5.95/ */
+
+.pi-bars:before {
+  content: '\F035C';
+}
