@@ -29,6 +29,10 @@ export class HeaderComponent {
         {
           label: menu.projects,
           routerLink: '/projects'
+        },
+        {
+          label: menu.blog,
+          routerLink: '/blog'
         }
       ])
     );

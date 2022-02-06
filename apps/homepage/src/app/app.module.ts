@@ -9,6 +9,7 @@ import { TranslationModule } from './translation.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { BlogComponent } from './blog/blog.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
       {
         path: 'projects',
         component: ProjectsComponent
+      },
+      {
+        path: 'blog',
+        component: BlogComponent
       }
     ]
   },
@@ -37,7 +42,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ProjectsComponent],
+  declarations: [AppComponent, HomeComponent, ProjectsComponent, BlogComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

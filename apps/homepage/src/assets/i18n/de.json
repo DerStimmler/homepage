@@ -5,7 +5,8 @@
   },
   "menu": {
     "home": "Startseite",
-    "projects": "Projekte"
+    "projects": "Projekte",
+    "blog": "Blog"
   },
   "coming_soon": "In Kürze",
   "primeng": {
