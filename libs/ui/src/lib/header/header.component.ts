@@ -24,7 +24,7 @@ export class HeaderComponent {
       map(menu => [
         {
           label: menu.home,
-          routerLink: '/'
+          routerLink: '/home'
         },
         {
           label: menu.projects,

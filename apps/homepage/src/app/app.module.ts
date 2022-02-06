@@ -13,10 +13,15 @@ import { ProjectsComponent } from './projects/projects.component';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     component: DefaultLayoutComponent,
     children: [
       {
-        path: '',
+        path: 'home',
         component: HomeComponent
       },
       {
@@ -27,7 +32,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: ''
+    redirectTo: 'home'
   }
 ];
 
