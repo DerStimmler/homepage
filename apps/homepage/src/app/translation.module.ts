@@ -14,6 +14,9 @@ import { Inject, Injectable, NgModule } from '@angular/core';
 import { environment } from '../environments/environment';
 import { DOCUMENT } from '@angular/common';
 import { TRANSLOCO_PERSIST_LANG_STORAGE, TranslocoPersistLangModule } from '@ngneat/transloco-persist-lang';
+import { PrimeNGConfig } from 'primeng/api';
+import { tap } from 'rxjs';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 @Injectable({ providedIn: 'root' })
 export class TranslocoHttpLoader implements TranslocoLoader {
@@ -24,6 +27,7 @@ export class TranslocoHttpLoader implements TranslocoLoader {
   }
 }
 
+@UntilDestroy()
 @NgModule({
   imports: [
     TranslocoModule,
@@ -54,7 +58,11 @@ export class TranslocoHttpLoader implements TranslocoLoader {
   ]
 })
 export class TranslationModule {
-  constructor(private translocoService: TranslocoService, @Inject(DOCUMENT) private document: Document) {
+  constructor(
+    private translocoService: TranslocoService,
+    @Inject(DOCUMENT) private document: Document,
+    private primeNGConfig: PrimeNGConfig
+  ) {
     const availableLanguages = translocoService.getAvailableLangs() as string[];
     const defaultLanguage = translocoService.getDefaultLang();
     const browserLanguage = getBrowserLang() as string;
@@ -70,6 +78,16 @@ export class TranslationModule {
     this.translocoService.setActiveLang(activeLanguage);
 
     this.document.documentElement.lang = this.translocoService.getActiveLang();
+
+    if (activeLanguage !== 'en') {
+      this.translocoService
+        .selectTranslateObject('primeng')
+        .pipe(
+          untilDestroyed(this),
+          tap(translation => this.primeNGConfig.setTranslation(translation))
+        )
+        .subscribe();
+    }
   }
 
   chooseActiveLanguage(
