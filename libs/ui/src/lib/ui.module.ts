@@ -24,6 +24,7 @@ import { ThreeDimensionalTextComponent } from './three-dimensional-text/three-di
     CommonModule,
     MenubarModule,
     DropdownModule,
+    DividerModule,
     FormsModule,
     OverlayPanelModule,
     ButtonModule,
