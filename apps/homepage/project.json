@@ -6,9 +6,7 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/homepage",
         "index": "apps/homepage/src/index.html",
@@ -16,10 +14,7 @@
         "polyfills": "apps/homepage/src/polyfills.ts",
         "tsConfig": "apps/homepage/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/homepage/src/favicon.ico",
-          "apps/homepage/src/assets"
-        ],
+        "assets": ["apps/homepage/src/favicon.ico", "apps/homepage/src/assets", "apps/homepage/src/CNAME"],
         "styles": [
           "apps/homepage/src/styles.scss",
           {
@@ -119,26 +114,19 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "apps/homepage/src/**/*.ts",
-          "apps/homepage/src/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/homepage/src/**/*.ts", "apps/homepage/src/**/*.html"]
       }
     },
     "stylelint": {
       "executor": "nx-stylelint:lint",
       "options": {
         "configFile": "apps/homepage/.stylelintrc.json",
-        "lintFilePatterns": [
-          "apps/homepage/**/*.scss"
-        ]
+        "lintFilePatterns": ["apps/homepage/**/*.scss"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/homepage"
-      ],
+      "outputs": ["coverage/apps/homepage"],
       "options": {
         "jestConfig": "apps/homepage/jest.config.js",
         "passWithNoTests": true
