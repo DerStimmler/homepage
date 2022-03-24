@@ -12,12 +12,21 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install Dependencies 📦
-        run: yarn install --prod
+        run: yarn install --prod --ignore-scripts
 
       - name: Build 🔧
         run: |
           yarn build --prod
           cp dist/apps/homepage/index.html dist/apps/homepage/404.html
+
+      - name: Test 📋
+        run: yarn test
+
+      - name: Lint 🔎
+        run: yarn lint
+
+      - name: Stylelint 🔎
+        run: yarn stylelint
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
