@@ -19,7 +19,7 @@ export class ThemeSelectionComponent {
 
   changeColor(color: ThemeColor) {
     this.selectedColor = color;
-    this.themeService.selectColor(color);
+    this.themeService.setColor(color);
   }
 
   changeDarkMode($event: boolean) {

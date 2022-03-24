@@ -26,6 +26,10 @@ export class ThemeService {
     return backupColor;
   }
 
+  private static isSystemDarkMode(): boolean {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
   loadColorSelection(): ThemeColor {
     const color = localStorage.getItem(this.themeColorKey);
 
@@ -52,14 +56,16 @@ export class ThemeService {
     const darkMode = localStorage.getItem(this.darkModeKey);
 
     if (darkMode === null) {
-      this.saveDarkModeSelection(true);
-      return true;
+      const isSystemDarkMode = ThemeService.isSystemDarkMode();
+
+      this.saveDarkModeSelection(isSystemDarkMode);
+      return isSystemDarkMode;
     }
 
     return JSON.parse(darkMode);
   }
 
-  selectColor(themeColor: ThemeColor): void {
+  setColor(themeColor: ThemeColor): void {
     this.saveColorSelection(themeColor);
 
     this.setTheme(themeColor, this.loadDarkModeSelection());
