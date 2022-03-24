@@ -11,8 +11,22 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Cache ⚡
+        uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
       - name: Install Dependencies 📦
-        run: yarn install --prod --ignore-scripts
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn install --prefer-offline --ignore-scripts
 
       - name: Build 🔧
         run: |
